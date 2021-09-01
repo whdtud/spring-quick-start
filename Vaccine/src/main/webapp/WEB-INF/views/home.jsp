@@ -5,8 +5,9 @@
 <html>
 <head>
 <title>코로나19 예방접종 사전예약 시스템</title>
+<link href="${pageContext.request.contextPath }/resources/css/reset.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath }/resources/css/home.css" rel="stylesheet">
-<script src="${pageContext.request.contextPath }/resources/js/home.js?2"></script>
+<script src="${pageContext.request.contextPath }/resources/js/home.js"></script>
 </head>
 <body>
 	<div class="container">
