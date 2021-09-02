@@ -7,6 +7,7 @@
 <title>코로나19 예방접종 사전예약 시스템</title>
 <link href="${pageContext.request.contextPath }/resources/css/reset.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath }/resources/css/landing.css" rel="stylesheet">
+<script src="${pageContext.request.contextPath }/resources/js/landing.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -37,27 +38,27 @@
 					</div>
 					<div>
 						<ul>
-							<li>원활</li>
-							<li>지연</li>
-							<li>혼잡</li>
-							<li>선택불가</li>
+							<li><div class="circle" style="background-color: green;"></div>원활</li>
+							<li><div class="circle" style="background-color: orange;"></div>지연</li>
+							<li><div class="circle" style="background-color: red;"></div>혼잡</li>
+							<li><div class="circle" style="background-color: gray;"></div>선택불가</li>
 						</ul>
 					</div>
 				</div>
 				<div>
 					<h1>본인 인증 방법별 인증 대기 신호등을 확인하고 선택하세요.</h1>
-					<div>
+					<form id="identification-form">
 						<ul>
-							<li><input type="radio" name="chk_info" value="naver">네이버 인증서</li>
-							<li><input type="radio" name="chk_info" value="kakao">카카오 인증</li>
-							<li><input type="radio" name="chk_info" value="pass">PASS 인증서</li>
-							<li><input type="radio" name="chk_info" value="bank">공동/금융인증서</li>
-							<li><input type="radio" name="chk_info" value="phone">휴대폰 인증</li>
+							<li><input type="radio" name="chk-info" id="naver" value="naver">네이버 인증서</li>
+							<li><input type="radio" name="chk-info" id="kakao" value="kakao">카카오 인증</li>
+							<li><input type="radio" name="chk-info" id="pass" value="pass">PASS 인증서</li>
+							<li><input type="radio" name="chk-info" id="bank" value="bank">공동/금융인증서</li>
+							<li><input type="radio" name="chk-info" id="phone" value="phone">휴대폰 인증</li>
 						</ul>
-					</div>
+					</form>
 				</div>
 				<div>
-					<input type="button" value="본인인증 바로가기">
+					<input type="button" value="본인인증 바로가기" onclick="onClickSubmit()">
 				</div>
 			</div>
 		</main>
