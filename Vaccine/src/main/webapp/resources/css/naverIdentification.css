@@ -1,0 +1,98 @@
+.container {
+	background-color: #e9e9e9;
+}
+
+.content-box {
+	height: inherit;
+	width: 850px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#header {
+	height: 170px;
+}
+
+#main-box {
+	margin-bottom: 100px;
+	background-color: white;
+}
+
+#header > .content-box {
+	display: flex;
+}
+
+#header-left {
+	height: inherit;
+	width: 300px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+#header-right {
+	height: inherit;
+	width: 550px;
+	display: flex;
+	align-items: center;
+}
+
+#header-left > h1 {
+	margin-right: 10px;
+	font-size: 22px;
+}
+
+#header-right > div {
+	margin-left: 10px;
+}
+
+#main > .content-box {
+	width: 600px;
+}
+
+#main-box {
+	padding: 30px;
+}
+
+#main-box > form {
+	text-align: center;
+}
+
+#main-box > form > input {
+	margin-top: 30px;
+	height: 30px;
+	width : 100px;
+	border-radius: 5px;
+	background-color: #0076C0;
+	color: white;
+}
+
+#footer {
+	background-color: white;
+}
+
+#footer > .content-box {
+	padding: 30px;
+}
+
+#footer > .content-box > section > h1 {
+	margin: 0;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+#footer dt {
+	float: left;
+}
+
+#footer dd:last-child {
+	white-space: nowrap;
+}
+
+.circle {
+	margin: 5px;
+	float: left;
+	width : 20px;
+	height : 20px;
+  	border-radius: 50%;
+}

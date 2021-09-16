@@ -5,7 +5,7 @@
 
 <configuration>
 	<typeAliases>
-		<typeAlias alias="user" type="com.vaccine.view.user.UserVO"/>
+		<typeAlias alias="user" type="com.vaccine.vo.UserVO"/>
 	</typeAliases>
 	
 	<environments default="development">

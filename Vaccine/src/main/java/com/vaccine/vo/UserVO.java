@@ -1,4 +1,4 @@
-package com.vaccine.view.user;
+package com.vaccine.vo;
 
 public class UserVO {
 

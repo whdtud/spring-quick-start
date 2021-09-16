@@ -1,8 +1,8 @@
-package com.vaccine.view.user.impl;
+package com.vaccine.dao;
 
 import org.mybatis.spring.SqlSessionTemplate;
 
-import com.vaccine.view.user.UserVO;
+import com.vaccine.vo.UserVO;
 
 public class UserDAO {
 
