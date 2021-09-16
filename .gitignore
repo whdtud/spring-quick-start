@@ -98,3 +98,4 @@ hs_err_pid*
 # Folder
 Servers/
 BoardWeb/target/
+target/
