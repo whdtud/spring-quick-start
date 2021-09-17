@@ -1,25 +1,36 @@
 package com.vaccine.controller;
 
-import java.util.Locale;
+import java.io.UnsupportedEncodingException;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import com.vaccine.service.NaverAPIervice;
 
 @Controller
 public class IdentificationController {
 
-	@GetMapping("naverLoginSuccess.do")
-	public String naverIdentification() {
-		
-		return "naverIdentification";
-	}
+	@Resource
+	private NaverAPIervice naverAPIService;
 	
 	@GetMapping("naverIdentification.do")
-	public String naverIdentification(Locale locale, Model model) {
+	public String naverIdentification() {
+		return "naverIdentification";
+	}
+
+	@PostMapping("naverAuth.do")
+	public String naverAuth() throws UnsupportedEncodingException {
+		return "redirect:" + naverAPIService.auth();
+	}
+	
+	@GetMapping("onNaverLoginSuccess.do")
+	public String onNaverLoginSuccess() {
+		
+		
 		return "naverIdentification";
 	}
 	

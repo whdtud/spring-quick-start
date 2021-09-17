@@ -33,7 +33,7 @@
 					<br>
 					<div>네이버 로그인 후 보유하신 휴대폰의 네이버 앱에서 인증을 완료할 수 있습니다.</div>
 					
-					<form action="naverIdentification.do" method="post">
+					<form action="naverAuth.do" method="post">
 						<input type="submit" value="인증 요청">
 					</form>
 				</div>
