@@ -5,13 +5,19 @@ import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.HashMap;
 import java.util.Map;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class HttpURLConnUtil {
 
-	public static String doGetRequest(String baseUrl, HashMap<String, String> properties,  HashMap<String, String> params) {
-		String url = baseUrl + "?" + parseParams(params);
+	public static String doGetRequest(String baseUrl, Map<String, String> properties,  Map<String, String> params) {
+		String url = baseUrl;
+		
+		String strParams = parseParams(params);
+		if (strParams.isEmpty() == false)
+			url += "?" + strParams;
 		
         try {
             URL urlObj = new URL(url);
@@ -46,7 +52,7 @@ public class HttpURLConnUtil {
         return null;
 	}
 	
-	public static String doPostRequest(String baseUrl, HashMap<String, String> properties, HashMap<String, String> params) {
+	public static String doPostRequest(String baseUrl, Map<String, String> properties, Map<String, String> params) {
         try {
             URL url = new URL(baseUrl);
             HttpURLConnection con = (HttpURLConnection)url.openConnection();
@@ -87,7 +93,7 @@ public class HttpURLConnUtil {
         return null;
 	}
 
-	public static String doPutRequest(String baseUrl, HashMap<String, String> properties, String jsonParams) {
+	public static String doPutRequest(String baseUrl, Map<String, String> properties, String jsonParams) {
         try {
             URL url = new URL(baseUrl);
             HttpURLConnection con = (HttpURLConnection)url.openConnection();
@@ -127,7 +133,7 @@ public class HttpURLConnUtil {
         return null;
 	}
 	
-	public static String parseParams(HashMap<String, String> params) {
+	public static String parseParams(Map<String, String> params) {
 		if (params == null || params.isEmpty())
 			return "";
 		
@@ -143,5 +149,14 @@ public class HttpURLConnUtil {
         	sb.deleteCharAt(sb.length() - 1);
         
         return sb.toString();
+	}
+	
+	public static String parseParamsToJSON(Map<String, String> params) throws JsonProcessingException {
+		if (params == null || params.isEmpty())
+			return "";
+		
+		ObjectMapper mapper = new ObjectMapper();
+		
+        return mapper.writeValueAsString(params);
 	}
 }
