@@ -9,7 +9,7 @@ function onClickSubmit() {
 	}
 	
 	if (value != null) {
-		location.href = value + 'Identification.do';
+		location.href = value + 'Auth.do';
 	} else {
 		window.alert('본인 인증 방법을 선택해주세요.');
 	}

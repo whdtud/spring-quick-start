@@ -16,14 +16,14 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.vaccine.service.NaverAPIervice;
 
 @Controller
-public class IdentificationController {
+public class AuthController {
 
 	@Resource
 	private NaverAPIervice naverAPIService;
 	
-	@GetMapping("naverIdentification.do")
-	public String naverIdentification() {
-		return "naverIdentification";
+	@GetMapping("naverAuth.do")
+	public String naverAuth() {
+		return "naverAuth";
 	}
 
 	@PostMapping("naverAuth.do")
@@ -41,6 +41,11 @@ public class IdentificationController {
 			naverAPIService.requestToken(code, state);
 		}
 		
-		return "naverIdentification";
+		return "naverAuth";
+	}
+	
+	@GetMapping("phoneAuth.do")
+	public String phoneAuth() {
+		return "phoneAuth";
 	}
 }

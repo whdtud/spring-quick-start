@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>코로나19 예방접종 사전예약 시스템</title>
 <link href="${pageContext.request.contextPath }/resources/css/reset.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath }/resources/css/naverIdentification.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath }/resources/css/naverAuth.css" rel="stylesheet">
 </head>
 <body>
 	<div class="container">
